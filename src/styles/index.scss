@@ -9,5 +9,90 @@ $main: #555;
 body {
   #root {
     color: $main;
+    display: flex;
   }
+}
+
+.game {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column; 
+  margin-left: 100px;
+}
+
+.high-scores{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-top: 12px;
+  width: 50%;
+}
+
+.score-table{
+  overflow-y: scroll;
+  max-height: 800px;
+}
+
+.body {
+  display: flex;
+}
+
+.help {
+  color: #666;
+  margin: 10px;
+  text-align: center;
+}
+
+.left {
+  text-align: center;
+  width: 50%;
+  border: thin solid #ddd;
+}
+
+.right {
+  text-align: center;
+  padding: 10px;
+  width: 50%;
+  border: thin solid #ddd;
+}
+
+.star {
+	display: inline-block;
+  margin: 0 15px;
+}
+
+.star:after {
+  content: "\2605";
+  font-size: 45px;
+}
+
+.number {
+  background-color: #eee;
+  border: thin solid #ddd;
+  width: 45px;
+  height: 45px;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.number:focus, .number:active {
+  outline: none;
+  border: thin solid #ddd;
+}
+
+.timer {
+	color: #666;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.game-done .message {
+  font-size: 250%;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.profile{
+  width: 80px;
+  padding: 10px;
 }

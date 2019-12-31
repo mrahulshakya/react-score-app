@@ -31,6 +31,10 @@ const config = {
         exclude: /node_modules/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      {
+        test: /\.css$/,
+         use: ['style-loader', 'css-loader']
+      } 
     ],
   },
   optimization: {
@@ -69,7 +73,7 @@ const config = {
         );
       });
     },
-  ],
+  ]
 };
 
 module.exports = config;
