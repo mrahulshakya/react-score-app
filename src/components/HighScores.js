@@ -1,22 +1,7 @@
 import React, {useEffect, useState} from "react";
-import axios from 'axios';
 
-export const HighScores = () => {
-   const [scores, setScores] = useState([]);
-   const [scoreLoaded, setScoreLoaded] = useState(false);
-  
-    useEffect( () => {
-        if (!scoreLoaded) {
-         const scores = axios.get("http://localhost:5000/scores")
-         .then(res => {
-             console.log('response from the api', res.data.scores);
-             setScores(res.data.scores);
-         }).catch(e => console.log(e))
-         .finally(() => setScoreLoaded(true));
-        }
-      });
-
-  
+export const HighScores = (props) => {
+   
   return (
     <div className="high-scores">
       <h5>Scores</h5>
@@ -28,7 +13,7 @@ export const HighScores = () => {
               <th>Score</th>
               <th>User Id</th>
             </tr>
-            {scores.map(x => (
+            {props.scores.map(x => (
               <tr key={`tr${x.userId}`}>
                 <td key={`td_name${x.userId}`}><img className="profile" key={'img'+  x.userId} src="profile.png"/>{x.userName}</td>
                 <td key={`td_score${x.userId}`}>{x.score}</td>

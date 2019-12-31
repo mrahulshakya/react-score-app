@@ -5,6 +5,7 @@ export const useGameState = timeLimit => {
   const [availableNums, setAvailableNums] = useState(utils.range(1, 9));
   const [candidateNums, setCandidateNums] = useState([]);
   const [secondsLeft, setSecondsLeft] = useState(10);
+ 
   useEffect(() => {
     if (secondsLeft > 0 && availableNums.length > 0) {
       const timerId = setTimeout(() => setSecondsLeft(secondsLeft - 1), 1000);
@@ -22,5 +23,5 @@ export const useGameState = timeLimit => {
       setCandidateNums([]);
     }
   };
-  return { stars, availableNums, candidateNums, secondsLeft, setGameState };
+  return { stars, availableNums, candidateNums, secondsLeft, setGameState};
 };
